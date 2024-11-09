@@ -12,17 +12,17 @@
     <div class="container">
         <!-- Left Column: Form for Adding Quotes -->
         <div class="left-column">
-            <h2>Add a Quote</h2>
+            <h2>Legg inn et sistat</h2>
             <form action="/add-quote" method="POST">
                 <input type="text" name="text" placeholder="Sitat" required>
-                <input type="text" name="author" placeholder="Sagt av">
+                <input type="text" name="author" placeholder="Sitat av (Valgfritt)">
                 <button type="submit">Legg inn sistat</button>
             </form>
         </div>
 
         <!-- Right Column: Display Quotes with Filter Options -->
         <div class="right-column">
-            <h2>Quotes</h2>
+            <h2>Sitater</h2>
             <!-- Filter Buttons -->
             <div class="filter-buttons">
                 <button id="filter-newest" class="active">Newest First</button>
