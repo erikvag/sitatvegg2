@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - Sitatveggen</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <h1>Admin Panel</h1>
+
+    <!-- Logout Button -->
+    <div class="admin-actions">
+        <button onclick="logout()">Logout</button>
+    </div>
+
+    <!-- Quotes List for Admin -->
+    <ul id="admin-quote-list">
+        <% quotes.forEach((quote) => { %>
+            <li data-id="<%= quote.id %>">
+                <div class="quote-text">"<%= quote.text %>"</div>
+                <div class="quote-author">- <%= quote.author %></div>
+                <div class="quote-upvotes">Upvotes: <span class="upvote-count"><%= quote.upvotes %></span></div>
+                <button class="delete-button" onclick="deleteQuote('<%= quote.id %>')">🗑️ Delete</button>
+            </li>
+        <% }) %>
+    </ul>
+
+    <script src="/admin.js"></script>
+</body>
+</html>

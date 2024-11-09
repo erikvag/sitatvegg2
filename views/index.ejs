@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sitatveggen</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <h1>Sitatveggen</h1>
+
+    <div class="container">
+        <!-- Left Column: Form for Adding Quotes -->
+        <div class="left-column">
+            <h2>Add a Quote</h2>
+            <form action="/add-quote" method="POST">
+                <input type="text" name="text" placeholder="Enter your quote" required>
+                <input type="text" name="author" placeholder="Author (optional)">
+                <button type="submit">Add Quote</button>
+            </form>
+        </div>
+
+        <!-- Right Column: Display Quotes with Filter Options -->
+        <div class="right-column">
+            <h2>Quotes</h2>
+            <!-- Filter Buttons -->
+            <div class="filter-buttons">
+                <button id="filter-newest" class="active">Newest First</button>
+                <button id="filter-top-voted">Top Voted</button>
+            </div>
+
+            <!-- Quote List -->
+            <ul id="quote-list"></ul>
+        </div>
+    </div>
+
+    <script src="/script.js"></script>
+</body>
+</html>

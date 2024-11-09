@@ -1,0 +1,211 @@
+/* Reset default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f0f0;
+    color: #333;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    line-height: 1.6;
+}
+
+h1 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+/* Container for two-column layout */
+.container {
+    display: flex;
+    gap: 20px;
+}
+
+/* Left Column: Form for Adding Quotes */
+.left-column {
+    flex: 1;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.left-column h2 {
+    margin-bottom: 15px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+input[type="text"] {
+    padding: 12px;
+    font-size: 1rem;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus {
+    outline: none;
+    border-color: #007BFF;
+}
+
+button {
+    padding: 12px;
+    font-size: 1rem;
+    color: #fff;
+    background-color: #007BFF;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+/* Right Column: Display Quotes */
+.right-column {
+    flex: 2;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.right-column h2 {
+    margin-bottom: 15px;
+}
+
+/* Filter Buttons */
+.filter-buttons {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.filter-buttons button {
+    padding: 10px 15px;
+    font-size: 1rem;
+    color: #007BFF;
+    background-color: #f0f0f0;
+    border: 1px solid #007BFF;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.filter-buttons button:hover {
+    background-color: #007BFF;
+    color: #fff;
+}
+
+.filter-buttons .active {
+    background-color: #007BFF;
+    color: #fff;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    background-color: #f9f9f9;
+    padding: 15px 20px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.quote-text {
+    font-size: 1.2rem;
+    font-style: italic;
+    color: #333;
+}
+
+.quote-author {
+    color: #666;
+    font-size: 0.9rem;
+    text-align: right;
+}
+
+.upvote-button {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 12px;
+    font-size: 1.1rem;
+    color: #007BFF;
+    background-color: transparent;
+    border: 1px solid #007BFF;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: color 0.2s, border-color 0.2s, background-color 0.2s;
+}
+
+.upvote-button:hover {
+    color: #fff;
+    background-color: #007BFF;
+    border-color: #0056b3;
+}
+
+.upvote-button:active {
+    transform: scale(0.95);
+}
+
+.upvote-count {
+    font-weight: bold;
+    color: #333;
+}
+
+/* Responsive Design */
+@media (max-width: 800px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .left-column,
+    .right-column {
+        flex: 1;
+    }
+}
+
+/* Admin Page Styles */
+.delete-button {
+    padding: 8px 12px;
+    font-size: 1rem;
+    color: #fff;
+    background-color: #d9534f;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.delete-button:hover {
+    background-color: #c9302c;
+}
+
+.delete-button:active {
+    transform: scale(0.95);
+}
