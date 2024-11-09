@@ -6,7 +6,7 @@ const session = require('express-session');
 
 const app = express();
 const PORT = 3000;
-const ADMIN_PASSWORD = 'n4fabruker'; // Change this to your secure password
+const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD || 'admin123'; // Use environment variable or fallback to default
 
 // Middleware setup
 app.use(express.static(path.join(__dirname, 'public')));
@@ -19,7 +19,7 @@ app.use(session({
     secret: 'sitatveggen_secret_key',
     resave: false,
     saveUninitialized: false,
-    cookie: { secure: false } // Set secure: true when using HTTPS
+    cookie: { secure: false } // Set secure: true if using HTTPS
 }));
 
 const quotesFile = path.join(__dirname, 'data/quotes.json');
@@ -114,6 +114,7 @@ app.post('/upvote', (req, res) => {
 app.post('/delete-quote', isAuthenticated, (req, res) => {
     const { id } = req.body;
     const index = quotes.findIndex(q => q.id === id);
+
     if (index !== -1) {
         quotes.splice(index, 1);
         fs.writeFileSync(quotesFile, JSON.stringify(quotes, null, 2));
@@ -121,6 +122,12 @@ app.post('/delete-quote', isAuthenticated, (req, res) => {
     } else {
         res.status(400).send("Quote not found");
     }
+});
+
+// Route: Fetch top voted quotes
+app.get('/top-quotes', (req, res) => {
+    const topQuotes = [...quotes].sort((a, b) => b.upvotes - a.upvotes);
+    res.json(topQuotes);
 });
 
 // Start the server
