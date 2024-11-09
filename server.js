@@ -6,7 +6,7 @@ const session = require('express-session');
 
 const app = express();
 const PORT = 3000;
-const ADMIN_PASSWORD = 'erER3366!!'; // Change this to your secure password
+const ADMIN_PASSWORD = 'n4fabruker'; // Change this to your secure password
 
 // Middleware setup
 app.use(express.static(path.join(__dirname, 'public')));
