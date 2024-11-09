@@ -209,3 +209,21 @@ li {
 .delete-button:active {
     transform: scale(0.95);
 }
+
+/* Logo Styles */
+.logo-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.logo {
+    max-width: 100%;   /* Allows the image to scale down with the viewport */
+    height: auto;      /* Maintains the aspect ratio */
+    width: auto;       /* Prevents image distortion */
+}
+
+@media only screen and (max-width: 600px) {
+    .logo {
+        max-width: 80%;  /* Slightly smaller on mobile for better fit */
+    }
+}
